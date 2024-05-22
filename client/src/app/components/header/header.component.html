@@ -1,25 +1,25 @@
-<nav class="w-full flex justify-between items-center bg-indigo-500 p-5 shadow-lg">
+<nav class="flex items-center justify-between w-full p-5 bg-indigo-500 shadow-lg">
   <div class="logo">
-    <span class="text-gray-200 text-4xl flex justify-start items-center"
+    <span class="flex items-center justify-start text-4xl text-gray-200"
       >BookMyBook</span
     >
   </div>
-  <div class="search relative">
+  <div class="relative search">
     <span class="absolute mt-1.5 mx-3  font-light"> <i class="fa fa-search" aria-hidden="true"></i></span>
     <input
       type="text"
       placeholder="Search Book"
-      class="w-96 p-2 pl-9 rounded rounded-r-none text-gray-600"
+      class="p-2 text-gray-600 rounded rounded-r-none w-96 pl-9"
     />
-    <button class="bg-gray-200 p-2 rounded rounded-l-none text-gray-600">
+    <button class="p-2 text-gray-600 bg-gray-200 rounded rounded-l-none">
      Search
     </button>
   </div>
   <div class="nav-items">
-    <span class="text-lg cursor-pointer text-gray-200 font-bold m-3 hover:underline hover::text-indigo-200">Login</span>
-    <span class="text-lg cursor-pointer text-gray-200 font-bold m-3 hover:underline hover::text-indigo-200">Register</span>
-    <span class="text-lg cursor-pointer text-gray-200 font-bold m-3 hover:underline hover::text-indigo-200">Cart</span>
-    <span class="text-lg cursor-pointer text-gray-200 font-bold m-3 hover:underline hover::text-indigo-200">Welcome User</span>
-    <span class="text-lg cursor-pointer text-gray-200 font-bold m-3 hover:underline hover::text-indigo-200">Logout</span>
+    <span routerLink="/login" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Login</span>
+    <span routerLink="/register" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Register</span>
+    <span routerLink="" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Cart</span>
+    <span routerLink="" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Welcome User</span>
+    <span routerLink="" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Logout</span>
   </div>
 </nav>

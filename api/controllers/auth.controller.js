@@ -13,14 +13,14 @@ const register = async (req, res,next) => {
     const newUser = new User({
         firstName : req.body.firstName,
         lastName : req.body.lastName,
-        username : req.body.username,
+        username : req.body.userName,
         email : req.body.email,
         password : hashedPassword,
         roles : role
     });
 
     await newUser.save();
-    return res.status(201).send({message:"User registered successfully"});
+    return res.status(201).json({message:"User registered successfully"});
 }
 
 
@@ -34,7 +34,7 @@ const registerAdmin = async (req, res,next) => {
     const newUser = new User({
         firstName : req.body.firstName,
         lastName : req.body.lastName,
-        username : req.body.username,
+        username : req.body.userName,
         email : req.body.email,
         password : hashedPassword,
         isAdmin : true,

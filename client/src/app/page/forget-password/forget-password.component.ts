@@ -8,6 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './forget-password.component.html',
   styleUrls: ['./forget-password.component.scss']
 })
-export class ForgetPasswordComponent {
+export default class ForgetPasswordComponent {
 
 }

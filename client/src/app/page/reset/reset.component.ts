@@ -8,6 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './reset.component.html',
   styleUrls: ['./reset.component.scss']
 })
-export class ResetComponent {
+export default class ResetComponent {
 
 }
