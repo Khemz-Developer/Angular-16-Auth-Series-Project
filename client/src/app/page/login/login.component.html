@@ -49,9 +49,10 @@
         Login
       </button>
     </form>
-    <div class="flex justify-center mt-5">
-      <span>New to BookMyBook ?</span
-      ><a class="ml-2 text-blue-600" href="/register">Register Here</a>
+    <div class="flex justify-between mt-5">
+      <a class="ml-2 text-blue-600 cursor-pointer" [routerLink]="['/forget-password']" routerLinkActive="router-link-active">Forget Password</a>
+      
+      <a class="ml-2 text-blue-600 cursor-pointer" [routerLink]="['/register']" routerLinkActive="router-link-active" >Create Account</a>
     </div>
   </div>
   

@@ -2,12 +2,12 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -32,6 +32,8 @@ export default class LoginComponent {
 
     this.authService.loginService(this.loginForm.value).subscribe((res)=>{
       alert('User Logged in Successfully');
+      localStorage.setItem('user_id',res.data._id);
+      this.authService.isLoggedIn$.next(true);
       this.loginForm.reset();
       this.router.navigate(['/home']);
       

@@ -4,7 +4,7 @@
       >BookMyBook</span
     >
   </div>
-  <div class="relative search">
+  <div *ngIf="isLoggedIn" class="relative search">
     <span class="absolute mt-1.5 mx-3  font-light"> <i class="fa fa-search" aria-hidden="true"></i></span>
     <input
       type="text"
@@ -16,10 +16,16 @@
     </button>
   </div>
   <div class="nav-items">
-    <span routerLink="/login" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Login</span>
-    <span routerLink="/register" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Register</span>
-    <span routerLink="" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Cart</span>
-    <span routerLink="" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Welcome User</span>
-    <span routerLink="" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Logout</span>
+    <ng-container *ngIf="!isLoggedIn">
+      <span routerLink="/login" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Login</span>
+      <span routerLink="/register" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Register</span>
+    </ng-container>
+    
+    <ng-container *ngIf="isLoggedIn">
+      <span routerLink="" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Cart</span>
+      <span routerLink="" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Welcome User</span>
+      <span (click)="logout()" routerLink="/login" class="m-3 text-lg font-bold text-gray-200 cursor-pointer hover:underline hover::text-indigo-200">Logout</span>
+    </ng-container>
+    
   </div>
 </nav>
