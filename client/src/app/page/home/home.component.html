@@ -1,1 +1,9 @@
-<p>home works!</p>
+<h4 class="mt-10 text-4xl font-bold text-center">Welcome to BookMYBook</h4>
+
+<div class="grid grid-cols-3 gap-10 mx-auto ml-40 ">
+  <ng-container
+   *ngFor="let book of books">
+    <app-book-card [book]="book"></app-book-card>
+  </ng-container>
+  
+</div>
